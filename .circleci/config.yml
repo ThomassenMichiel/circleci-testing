@@ -2,6 +2,8 @@ version: 2.1
 
 jobs:
   build:
+    docker:
+      - image: circleci/openjdk:11.0-stretch-node-browsers-legacy
     steps:
       - codecov/upload:
           file: {{ coverage_report_filepath }}
